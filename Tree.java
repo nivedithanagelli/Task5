@@ -15,8 +15,7 @@ class graph{
             adj[i] = new LinkedList();   
         }   
        // arr = new int[n];
-        visited = new boolean[n];
-        
+        visited = new boolean[n];   
     }
     
     void addEdge(int a,int b){
@@ -33,8 +32,6 @@ class graph{
             int k = 0;
             visited[s]=true;
             queue.add(s);
-           
-            
             while (queue.size() != 0)
             {
                 
@@ -59,17 +56,8 @@ class graph{
         }else{
         	return -1;
         }
- 
-        
-    
-    }
-    
-   
-    
-    
+    }   
 }
- 
- 
 public class Tree {
  
     public static void main(String[] args) {
@@ -83,21 +71,13 @@ public class Tree {
     	   int m = in.nextInt();
     	   int cb = in.nextInt();
            int r = in.nextInt();
-    	   
     	   graph g = new graph(n);
-    	  
-    	   
     	   for(int j = 0;j<m;j++){
     		   int a = in.nextInt();
     		   int b = in.nextInt();
     		   
                g.addEdge(a-1,b-1);
-    		   
-    		   
     	   }
-    	   
-          
-    	   
             long sum = 0;
     	   for(int k = 0;k<n;k++){
     		   int p = g.BFS(k);
@@ -105,21 +85,10 @@ public class Tree {
     		   if(p != -1){
     			   
                    sum += Math.min(p*r + cb, (p+1)*cb);
-                 //  c++;
-                   
-                   
-    		   }
-               
-               
-    	   }
-           
-           
-           
-    	   System.out.println(sum);
           
-       }
-       
+    		   }    
+    	   }
+    	   System.out.println(sum);
+       }  
     }
-    
-
 }
